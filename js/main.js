@@ -10,10 +10,41 @@ const tryNumber = document.querySelector('.js-try');
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
-console.log('Mi número aleatorio es:'getRandomNumber(100));
 
+//Pintar en consola el número generado aleatoriamente
+const randomNumber = getRandomNumber(100);
+console.log(`Mi número aleatorio es: ${randomNumber}`);
 
+//Función que genere respuesta al número insertado
+function checkResult(event) {
+    event.preventDefault();
+    const inputNumber = parseInt(input.value);
+    const win = 'Has ganado campeona!!!';
+    const below = 'Demasiado bajo';
+    const overhead = 'Demasiado alto';
+    const correctNumber = 'El número debe estar entre 1 y 100';
 
+    //Comprobar si input.value es === a getRandomNumber
+    if (inputNumber === randomNumber) {
+        help.innerHTML = win;
+    }
 
+    //Comprobar si input.value es < getRandomNumber
+
+    else if (inputNumber < randomNumber && inputNumber > 1) {
+        help.innerHTML = below;
+    }
+
+    //Comprobar si input.value es > getRandomNumber
+    else if (inputNumber > randomNumber && inputNumber < 100) {
+        help.innerHTML = overhead;
+    }
+
+    //Comprobar que el número esté entre 1 y 100
+    else {
+        help.innerHTML = correctNumber;
+    }
+
+}
 //Llamar a la función
-button.addEventListener('click', getRandomNumber)
+button.addEventListener('click', checkResult);
