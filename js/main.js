@@ -4,7 +4,7 @@
 const input = document.querySelector('.js-input');
 const button = document.querySelector('.js-button');
 const help = document.querySelector('.js-help');
-const tryNumber = document.querySelector('.js-try');
+let tryNumber = document.querySelector('.js-try');
 
 //Generar un número Aleatorio y pintarlo en consola
 function getRandomNumber(max) {
@@ -16,8 +16,7 @@ const randomNumber = getRandomNumber(100);
 console.log(`Mi número aleatorio es: ${randomNumber}`);
 
 //Función que genere respuesta al número insertado
-function checkResult(event) {
-    event.preventDefault();
+function checkResult() {
     const inputNumber = parseInt(input.value);
     const win = 'Has ganado campeona!!!';
     const below = 'Demasiado bajo';
@@ -36,7 +35,7 @@ function checkResult(event) {
     }
 
     //Comprobar si input.value es > getRandomNumber
-    else if (inputNumber > randomNumber && inputNumber < 100) {
+    else if (inputNumber > randomNumber && inputNumber <= 100) {
         help.innerHTML = overhead;
     }
 
@@ -49,9 +48,17 @@ function checkResult(event) {
 
 //Función que actualice el número de clicks que se hancen en el botón
 function changeTryNumber() {
-    parseInt(tryNumber.innerHTML)++;
+    tryNumber = 0;
+    result tryNumber++;
+}
+
+//Unificar funciones
+function guessNumber(event) {
+    event.preventDefault();
+    checkResult();
+    changeTryNumber();
 }
 
 //Llamar a la función
 //button.addEventListener('click', changeTryNumber);
-button.addEventListener('click', checkResult);
+button.addEventListener('click', guessNumber);
