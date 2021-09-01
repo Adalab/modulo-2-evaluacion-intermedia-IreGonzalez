@@ -46,5 +46,12 @@ function checkResult(event) {
     }
 
 }
+
+//Función que actualice el número de clicks que se hancen en el botón
+function changeTryNumber() {
+    parseInt(tryNumber.innerHTML)++;
+}
+
 //Llamar a la función
+//button.addEventListener('click', changeTryNumber);
 button.addEventListener('click', checkResult);
