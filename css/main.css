@@ -1,35 +1,47 @@
+body{
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+    font-size: 20px;
+    color: lightslategrey;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .main {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
-.title{
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color: lightslategrey;
-    font-weight: bold;
-}
+
 .form{
     display: flex;
     flex-direction: column;    
     row-gap: 10px;
 }
 .label{
-
+    font-size: 12px;
+    color: lightslategrey;
 }
+
 .input{
     background-color: lightgray;
     border-radius: 5px;
+    width: 150px;
 }
+
 .button{
-width: 100px;
-border-radius: 5px;
-background-color: mediumaquamarine;
-color: white;
+    width: 8ch;
+    border-radius: 5px;
+    background-color: mediumaquamarine;
+    color: white;
+    padding: 10px;
 }
 .paragraph{
-border: 2px solid lightgrey;
-padding: 5px;
-color: lightslategrey;
+    border: 2px solid lightgrey;
+    padding: 5px;
+    color: lightslategrey;
 }
 
