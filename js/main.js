@@ -4,16 +4,23 @@
 const input = document.querySelector('.js-input');
 const button = document.querySelector('.js-button');
 const help = document.querySelector('.js-help');
+const body = document.querySelector('body')
 let tryNumber = document.querySelector('.js-try');
+let counter = 1;
 
 //Generar un número Aleatorio y pintarlo en consola
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
-
-//Pintar en consola el número generado aleatoriamente
+//número generado aleatoriamente con un máximo de 100
 const randomNumber = getRandomNumber(100);
+
 console.log(`Mi número aleatorio es: ${randomNumber}`);
+
+//Generador de respuestas
+function writer(text) {
+    help.innerHTML = (text);
+}
 
 //Función que genere respuesta al número insertado
 function checkResult() {
@@ -25,40 +32,40 @@ function checkResult() {
 
     //Comprobar si input.value es === a getRandomNumber
     if (inputNumber === randomNumber) {
-        help.innerHTML = win;
+        //help.innerHTML = win;
+        writer(win);
     }
 
     //Comprobar si input.value es < getRandomNumber
 
     else if (inputNumber < randomNumber && inputNumber > 1) {
-        help.innerHTML = below;
+        writer(below);
     }
 
     //Comprobar si input.value es > getRandomNumber
     else if (inputNumber > randomNumber && inputNumber <= 100) {
-        help.innerHTML = overhead;
+        writer(overhead);
     }
+
 
     //Comprobar que el número esté entre 1 y 100
     else {
-        help.innerHTML = correctNumber;
+        writer(correctNumber);
     }
 
 }
 
 //Función que actualice el número de clicks que se hancen en el botón
-function changeTryNumber() {
-    tryNumber = 0;
-    result tryNumber++;
+function handleClickCounter() {
+    tryNumber.innerHTML = counter++;
 }
 
 //Unificar funciones
 function guessNumber(event) {
     event.preventDefault();
     checkResult();
-    changeTryNumber();
+    handleClickCounter();
 }
 
 //Llamar a la función
-//button.addEventListener('click', changeTryNumber);
 button.addEventListener('click', guessNumber);
