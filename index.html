@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Adivina el número</title>
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
   </head>
   <body>
     <main class="main">
-      <h1>Adivina el número</h1>
-      <form action="">
-        <label for="insert"> Introduce aquí tu número:</label>
-        <input type="text" name="insert" class="js-input" placeholder=" Ej: 50">
-        <button class="js-button">Prueba</button>
+      <h1 class="title">Adivina el número</h1>
+      <form class="form" action="">
+        <label class="label" for="insert"> Introduce aquí tu número:</label>
+        <input type="text" name="insert" class="js-input input" placeholder=" Ej: 50">
+        <button class="js-button button">Prueba</button>
       </form>
-      <p class="js-help">Pista: Escribe el número y dale a Prueba</p>
-      <p>Número de intentos: <span class="js-try">0</span></p>
+      <p class="js-help paragraph">Pista: Escribe el número y dale a Prueba</p>
+      <p class="paragraph">Número de intentos: <span class="js-try">0</span></p>
     </main>
     <script type="text/javascript" src="./js/main.js"></script>
   </body>

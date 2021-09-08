@@ -1,2 +1,35 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
+.title{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: lightslategrey;
+    font-weight: bold;
+}
+.form{
+    display: flex;
+    flex-direction: column;    
+    row-gap: 10px;
+}
+.label{
+
+}
+.input{
+    background-color: lightgray;
+    border-radius: 5px;
+}
+.button{
+width: 100px;
+border-radius: 5px;
+background-color: mediumaquamarine;
+color: white;
+}
+.paragraph{
+border: 2px solid lightgrey;
+padding: 5px;
+color: lightslategrey;
+}
+
